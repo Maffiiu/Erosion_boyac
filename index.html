@@ -31,11 +31,11 @@
         <script src="js/rbush.min.js"></script>
         <script src="js/labelgun.min.js"></script>
         <script src="js/labels.js"></script>
-        <script src="data/Erocin_boyac_1.js"></script>
+        <script src="data/Departamento_Boyac_1.js"></script>
         <script>
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
-        }).fitBounds([[4.5643298785467765,-74.85371366991266],[7.087830938043196,-71.51719150020881]]);
+        }).fitBounds([[5.624592456449829,-73.70830121075956],[5.861238593229471,-73.39606136573079]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -77,7 +77,7 @@
         });
         layer_OSMStandard_0;
         map.addLayer(layer_OSMStandard_0);
-        function pop_Erocin_boyac_1(feature, layer) {
+        function pop_Departamento_Boyac_1(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">TIPO</th>\
@@ -92,6 +92,9 @@
                         <td class="visible-with-data" id="GRADO">' + (feature.properties['GRADO'] !== null ? autolinker.link(feature.properties['GRADO'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
+                        <td colspan="2">' + (feature.properties['Area_Km2'] !== null ? autolinker.link(feature.properties['Area_Km2'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
                         <th scope="row">Area_Ha</th>\
                         <td class="visible-with-data" id="Area_Ha">' + (feature.properties['Area_Ha'] !== null ? autolinker.link(feature.properties['Area_Ha'].toLocaleString()) : '') + '</td>\
                     </tr>\
@@ -103,84 +106,129 @@
             popup.setContent(updatedContent);
         }
 
-        function style_Erocin_boyac_1_0(feature) {
+        function style_Departamento_Boyac_1_0(feature) {
             switch(String(feature.properties['GRADO'])) {
-                case 'Sin Evidencia':
-                    return {
-                pane: 'pane_Erocin_boyac_1',
-                stroke: false, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(1,137,5,1.0)',
-                interactive: true,
-            }
-                    break;
                 case 'Ligera':
                     return {
-                pane: 'pane_Erocin_boyac_1',
-                stroke: false, 
+                pane: 'pane_Departamento_Boyac_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(49,230,39,1.0)',
+                fillColor: 'rgba(34,240,27,1.0)',
                 interactive: true,
             }
                     break;
                 case 'Moderada':
                     return {
-                pane: 'pane_Erocin_boyac_1',
-                stroke: false, 
+                pane: 'pane_Departamento_Boyac_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(159,253,38,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'Severa':
-                    return {
-                pane: 'pane_Erocin_boyac_1',
-                stroke: false, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(231,186,38,1.0)',
+                fillColor: 'rgba(108,240,30,1.0)',
                 interactive: true,
             }
                     break;
                 case 'Muy Severa':
                     return {
-                pane: 'pane_Erocin_boyac_1',
-                stroke: false, 
+                pane: 'pane_Departamento_Boyac_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(221,59,41,1.0)',
+                fillColor: 'rgba(182,239,33,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'Severa':
+                    return {
+                pane: 'pane_Departamento_Boyac_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(213,199,26,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'Sin Evidencia':
+                    return {
+                pane: 'pane_Departamento_Boyac_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(238,155,16,1.0)',
                 interactive: true,
             }
                     break;
                 case 'No Suelo':
                     return {
-                pane: 'pane_Erocin_boyac_1',
-                stroke: false, 
+                pane: 'pane_Departamento_Boyac_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(195,0,0,1.0)',
+                fillColor: 'rgba(231,78,8,1.0)',
+                interactive: true,
+            }
+                    break;
+                default:
+                    return {
+                pane: 'pane_Departamento_Boyac_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(223,1,1,1.0)',
                 interactive: true,
             }
                     break;
             }
         }
-        map.createPane('pane_Erocin_boyac_1');
-        map.getPane('pane_Erocin_boyac_1').style.zIndex = 401;
-        map.getPane('pane_Erocin_boyac_1').style['mix-blend-mode'] = 'normal';
-        var layer_Erocin_boyac_1 = new L.geoJson(json_Erocin_boyac_1, {
+        map.createPane('pane_Departamento_Boyac_1');
+        map.getPane('pane_Departamento_Boyac_1').style.zIndex = 401;
+        map.getPane('pane_Departamento_Boyac_1').style['mix-blend-mode'] = 'normal';
+        var layer_Departamento_Boyac_1 = new L.geoJson(json_Departamento_Boyac_1, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Erocin_boyac_1',
-            layerName: 'layer_Erocin_boyac_1',
-            pane: 'pane_Erocin_boyac_1',
-            onEachFeature: pop_Erocin_boyac_1,
-            style: style_Erocin_boyac_1_0,
+            dataVar: 'json_Departamento_Boyac_1',
+            layerName: 'layer_Departamento_Boyac_1',
+            pane: 'pane_Departamento_Boyac_1',
+            onEachFeature: pop_Departamento_Boyac_1,
+            style: style_Departamento_Boyac_1_0,
         });
-        bounds_group.addLayer(layer_Erocin_boyac_1);
-        map.addLayer(layer_Erocin_boyac_1);
+        bounds_group.addLayer(layer_Departamento_Boyac_1);
+        map.addLayer(layer_Departamento_Boyac_1);
         setBounds();
         </script>
     </body>
